@@ -1,10 +1,9 @@
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import IntegrationTesting
-from plone.app.testing import FunctionalTesting
-from plone.app.testing import applyProfile
 
 from zope.configuration import xmlconfig
+
 
 class CollectiveBehaviorLocalregistry(PloneSandboxLayer):
 
@@ -16,7 +15,6 @@ class CollectiveBehaviorLocalregistry(PloneSandboxLayer):
         xmlconfig.file('configure.zcml',
                        collective.behavior.localregistry,
                        context=configurationContext)
-
 
     def setUpPloneSite(self, portal):
         pass

@@ -1,11 +1,22 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="collective.behavior.localregistry">
 
-  <five:registerPackage package="." initialize=".initialize" />
+    <five:registerPackage package="." initialize=".initialize" />
 
-  <!-- -*- extra stuff goes here -*- -->
-  
+    <include package="plone.behavior" file="meta.zcml" />
+
+    <plone:behavior
+        title="Local registry"
+        description="Dexterity behavior to add a local plone.app.registry for
+          content types, it adds a local component with a layered
+          proxy registry."
+        provides=".behavior.ILocalRegistry"
+        factory=".behavior.LocalRegistry"
+        for="plone.dexterity.interfaces.IDexterityContainer"        
+        />
+
 </configure>

@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-import os
 
 version = '0.1'
 
@@ -16,18 +15,20 @@ long_description = (
 
 setup(name='collective.behavior.localregistry',
       version=version,
-      description="Dexterity behavior to add a local plone.app.registry for content types, it adds a local component with a layered proxy registry.",
+      description="Dexterity behavior to add a local plone.app.registry for \
+          content types, it adds a local component with a layered \
+          proxy registry.",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
-        "Environment :: Web Environment",
-        "Framework :: Plone",
-        "Operating System :: OS Independent",
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 2.6",
-        "Topic :: Software Development :: Libraries :: Python Modules",
-        ],
+          "Environment :: Web Environment",
+          "Framework :: Plone",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 2.6",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+      ],
       keywords='',
       author='',
       author_email='',
@@ -41,11 +42,24 @@ setup(name='collective.behavior.localregistry',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'plone.behavior',
+          'rwproperty',
       ],
-      extras_require={'test': ['plone.app.testing']},
+      extras_require={
+          'develop': [
+              'Sphinx',
+              'manuel',
+              'pep8',
+              'setuptools-flakes',
+          ],
+          'test': [
+              'interlude',
+              'plone.app.testing'
+          ]
+      },
       entry_points="""
       # -*- Entry points: -*-
-  	  [z3c.autoinclude.plugin]
-  	  target = plone
+        [z3c.autoinclude.plugin]
+        target = plone
       """,
       )
