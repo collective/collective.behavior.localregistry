@@ -15,6 +15,7 @@
           content types, it adds a local component with a layered
           proxy registry."
         provides=".behavior.ILocalRegistry"
+        marker=".behavior.ILocalRegistryEnabled"
         factory=".behavior.LocalRegistry"
         for="plone.dexterity.interfaces.IDexterityContainer"        
         />

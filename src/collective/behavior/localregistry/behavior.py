@@ -16,6 +16,11 @@ class ILocalRegistry(Interface):
     """
 
 
+class ILocalRegistryEnabled(Interface):
+    """
+    """
+
+
 class LocalRegistry(object):
     """
     """
