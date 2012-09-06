@@ -20,4 +20,10 @@
         for="plone.dexterity.interfaces.IDexterityContainer"        
         />
 
+  	<subscriber
+  		for="collective.behavior.localregistry.behavior.ILocalRegistryEnabled
+             zope.app.container.interfaces.IObjectAddedEvent"
+        handler=".subscribers.enableChildRegistry"
+        />
+    
 </configure>

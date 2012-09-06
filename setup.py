@@ -43,6 +43,8 @@ setup(name='collective.behavior.localregistry',
           'setuptools',
           # -*- Extra requirements: -*-
           'plone.behavior',
+          'plone.dexterity',
+          'plone.namedfile',
           'rwproperty',
       ],
       extras_require={
