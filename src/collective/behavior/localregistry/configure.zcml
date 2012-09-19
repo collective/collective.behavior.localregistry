@@ -15,13 +15,11 @@
           content types, it adds a local component with a layered
           proxy registry."
         provides=".behavior.ILocalRegistry"
-        marker=".behavior.ILocalRegistryEnabled"
-        factory=".behavior.LocalRegistry"
         for="plone.dexterity.interfaces.IDexterityContainer"        
         />
 
   	<subscriber
-  		for="collective.behavior.localregistry.behavior.ILocalRegistryEnabled
+  		for="collective.behavior.localregistry.behavior.ILocalRegistry
              zope.app.container.interfaces.IObjectAddedEvent"
         handler=".subscribers.enableChildRegistry"
         />

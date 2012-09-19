@@ -56,7 +56,8 @@ setup(name='collective.behavior.localregistry',
           ],
           'test': [
               'interlude',
-              'plone.app.testing'
+              'plone.app.testing',
+              'plone.app.dexterity',
           ]
       },
       entry_points="""

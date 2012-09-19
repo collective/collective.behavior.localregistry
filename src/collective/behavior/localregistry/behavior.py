@@ -8,17 +8,3 @@ from zope.interface import implements, Interface
 class ILocalRegistry(Interface):
     """
     """
-
-
-class ILocalRegistryEnabled(Interface):
-    """
-    """
-
-
-class LocalRegistry(object):
-    """
-    """
-    implements(ILocalRegistry)
-
-    def __init__(self, context):
-        self.context = context
