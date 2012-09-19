@@ -1,6 +1,6 @@
 import zope.event
 from zope.component import getSiteManager
-from zope.app.component.interfaces import ISite
+from zope.component.interfaces import ISite
 from five.localsitemanager import make_objectmanager_site
 from plone.registry.interfaces import IRegistry
 from .proxy import (

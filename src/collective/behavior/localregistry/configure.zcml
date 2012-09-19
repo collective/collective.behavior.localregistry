@@ -20,7 +20,7 @@
 
   	<subscriber
   		for="collective.behavior.localregistry.behavior.ILocalRegistry
-             zope.app.container.interfaces.IObjectAddedEvent"
+             zope.container.interfaces.IObjectAddedEvent"
         handler=".subscribers.enableChildRegistry"
         />
     
