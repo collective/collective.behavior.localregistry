@@ -1,7 +1,8 @@
-from zope.interface import implements
-from zope.component.interfaces import ObjectEvent
+# -*- coding: utf-8 *-*
 
-from interfaces import ILocalRegistryCreatedEvent
+from collective.behavior.localregistry.interfaces import ILocalRegistryCreatedEvent
+from zope.component.interfaces import ObjectEvent
+from zope.interface import implements
 
 
 class LocalRegistryCreatedEvent(ObjectEvent):

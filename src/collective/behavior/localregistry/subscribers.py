@@ -1,14 +1,15 @@
-import zope.event
-from zope.component import getSiteManager
-from zope.component.interfaces import ISite
+# -*- coding: utf-8 *-*
+
+from collective.behavior.localregistry.events import LocalRegistryCreatedEvent
+from collective.behavior.localregistry.proxy import LocalRegistry
+from collective.behavior.localregistry.proxy import REGISTRY_NAME
 from five.localsitemanager import make_objectmanager_site
 from plone.registry.interfaces import IRegistry
-from .proxy import (
-    REGISTRY_NAME,
-    LocalRegistry,
-)
 from Products.CMFCore.utils import getToolByName
-from collective.behavior.localregistry.events import LocalRegistryCreatedEvent
+from zope.component import getSiteManager
+from zope.component.interfaces import ISite
+
+import zope.event
 
 
 def enableChildRegistry(context, event):

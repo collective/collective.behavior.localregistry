@@ -1,9 +1,11 @@
-from zope.component import getSiteManager
+# -*- coding: utf-8 *-*
+
 from persistent import Persistent
-from plone.registry.interfaces import IRegistry
-from plone.registry import Record, FieldRef
-from plone.registry.registry import _Records
 from plone.app.registry import Registry
+from plone.registry import Record, FieldRef
+from plone.registry.interfaces import IRegistry
+from plone.registry.registry import _Records
+from zope.component import getSiteManager
 
 _MARKER = object()
 
