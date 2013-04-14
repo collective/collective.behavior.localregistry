@@ -47,6 +47,7 @@ setup(name='collective.behavior.localregistry',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
+          'Pillow',
           'plone.app.registry',
           'plone.behavior',
           'plone.registry',
