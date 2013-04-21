@@ -1,12 +1,10 @@
-Changelog
----------
-
-Because you have to know where your towel is.
+There's a frood who really knows where his towel is
+---------------------------------------------------
 
 1.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Fix package credits. [hvelarde]
 
 
 1.0b1 (2013-04-21)
