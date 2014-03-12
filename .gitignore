@@ -4,6 +4,7 @@
 *.sublime-*
 *~
 .*.kate-swp
+.coverage
 .DS_Store
 .installed.cfg
 .mr.developer.cfg
@@ -16,6 +17,7 @@ coverage/
 develop-eggs/
 downloads/
 eggs/
+htmlcov/
 include/
 lib/
 library-settings.txt
