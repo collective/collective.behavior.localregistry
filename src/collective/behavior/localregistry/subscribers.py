@@ -8,7 +8,8 @@ from plone.registry.interfaces import IRegistry
 from Products.CMFCore.utils import getToolByName
 from zope.component import getSiteManager
 from zope.component.interfaces import ISite
-from zope.container.interfaces import IObjectAddedEvent, IObjectRemovedEvent
+from zope.container.interfaces import IObjectAddedEvent
+from zope.container.interfaces import IObjectRemovedEvent
 
 import zope.event
 
@@ -40,6 +41,5 @@ def reconfigureChildRegistry(context, event):
     """
     # Ignore removal, and we already catch added events above
     if not IObjectRemovedEvent.providedBy(event) \
-        and not IObjectAddedEvent.providedBy(event):
+            and not IObjectAddedEvent.providedBy(event):
         enableChildRegistry(context, event)
-

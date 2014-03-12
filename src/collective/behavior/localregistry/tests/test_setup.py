@@ -1,16 +1,14 @@
-import unittest2 as unittest
+# -*- coding: utf-8 -*-
+
+from ..testing import COLLECTIVE_BEHAVIOR_LOCALREGISTRY_INTEGRATION_TESTING
+from interlude import interact
+from plone.testing import layered
+from plone.testing import z2
+from zope.interface import Interface
+
 import doctest
 import pprint
-from interlude import interact
-from zope.interface import Interface
-from plone.testing import (
-    layered,
-    z2,
-)
-
-from collective.behavior.localregistry.testing import\
-    COLLECTIVE_BEHAVIOR_LOCALREGISTRY_INTEGRATION_TESTING
-
+import unittest2 as unittest
 
 TESTFILES = [
     ('../proxy.rst', COLLECTIVE_BEHAVIOR_LOCALREGISTRY_INTEGRATION_TESTING),

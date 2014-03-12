@@ -2,7 +2,8 @@
 
 from persistent import Persistent
 from plone.app.registry import Registry
-from plone.registry import Record, FieldRef
+from plone.registry import FieldRef
+from plone.registry import Record
 from plone.registry.interfaces import IRegistry
 from plone.registry.registry import _Records
 from zope.component import getSiteManager
