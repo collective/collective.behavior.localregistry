@@ -31,4 +31,4 @@ class CollectiveBehaviorLocalregistry(PloneSandboxLayer):
 COLLECTIVE_BEHAVIOR_LOCALREGISTRY_FIXTURE = CollectiveBehaviorLocalregistry()
 COLLECTIVE_BEHAVIOR_LOCALREGISTRY_INTEGRATION_TESTING = \
     IntegrationTesting(bases=(COLLECTIVE_BEHAVIOR_LOCALREGISTRY_FIXTURE, ),
-                       name="CollectiveBehaviorLocalregistry:Integration")
+                       name='CollectiveBehaviorLocalregistry:Integration')
