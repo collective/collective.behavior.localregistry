@@ -5,28 +5,26 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="collective.behavior.localregistry">
 
-    <includeDependencies package="." />
-    <five:registerPackage package="." />
+  <includeDependencies package="." />
+  <five:registerPackage package="." />
 
-    <plone:behavior
-        title="Local registry"
-        description="Dexterity behavior to add a local plone.app.registry for
-          content types, it adds a local component with a layered
-          proxy registry."
-        provides=".behavior.ILocalRegistry"
-        for="plone.dexterity.interfaces.IDexterityContainer"        
-        />
+  <plone:behavior
+      title="Local registry"
+      description="Dexterity behavior to add a local plone.app.registry for content types, it adds a local component with a layered proxy registry."
+      provides=".behavior.ILocalRegistry"
+      for="plone.dexterity.interfaces.IDexterityContainer"
+      />
 
-  	<subscriber
-  		for="collective.behavior.localregistry.behavior.ILocalRegistry
-             zope.container.interfaces.IObjectAddedEvent"
-        handler=".subscribers.enableChildRegistry"
-        />
+  <subscriber
+      for="collective.behavior.localregistry.behavior.ILocalRegistry
+           zope.container.interfaces.IObjectAddedEvent"
+      handler=".subscribers.enableChildRegistry"
+      />
 
-  	<subscriber
-  		for="collective.behavior.localregistry.behavior.ILocalRegistry
-             zope.container.interfaces.IObjectMovedEvent"
-        handler=".subscribers.reconfigureChildRegistry"
-        />
-    
+  <subscriber
+      for="collective.behavior.localregistry.behavior.ILocalRegistry
+           zope.container.interfaces.IObjectMovedEvent"
+      handler=".subscribers.reconfigureChildRegistry"
+      />
+
 </configure>
