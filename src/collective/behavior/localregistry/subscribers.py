@@ -8,6 +8,7 @@ from plone.registry.interfaces import IRegistry
 from Products.CMFCore.utils import getToolByName
 from zope.component import getSiteManager
 from zope.component.interfaces import ISite
+from zope.container.interfaces import IObjectAddedEvent, IObjectRemovedEvent
 
 import zope.event
 
@@ -29,3 +30,16 @@ def enableChildRegistry(context, event):
         context[REGISTRY_NAME] = LocalRegistry(REGISTRY_NAME).__of__(context)
     sm.registerUtility(component=context[REGISTRY_NAME], provided=IRegistry)
     zope.event.notify(LocalRegistryCreatedEvent(context))
+
+
+def reconfigureChildRegistry(context, event):
+    """ Upon moving or renaming an object, the registry must be reconfigured.
+
+    Under the hood, this will re-register compoents with the correct paths
+    to prevent errors.
+    """
+    # Ignore removal, and we already catch added events above
+    if not IObjectRemovedEvent.providedBy(event) \
+        and not IObjectAddedEvent.providedBy(event):
+        enableChildRegistry(context, event)
+

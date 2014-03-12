@@ -22,5 +22,11 @@
              zope.container.interfaces.IObjectAddedEvent"
         handler=".subscribers.enableChildRegistry"
         />
+
+  	<subscriber
+  		for="collective.behavior.localregistry.behavior.ILocalRegistry
+             zope.container.interfaces.IObjectMovedEvent"
+        handler=".subscribers.reconfigureChildRegistry"
+        />
     
 </configure>

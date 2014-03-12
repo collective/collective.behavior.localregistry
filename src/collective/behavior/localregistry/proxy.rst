@@ -20,6 +20,9 @@ Create ```child``` folder for tests::
     >>> childid = portal.invokeFactory("My Dexterity Container", "child")
     >>> child = portal['child']
 
+	>>> import transaction
+	>>> savepoint = transaction.savepoint(optimistic=True)
+
 Check registry creation
 -----------------------
 
@@ -46,6 +49,23 @@ An now we can go on as if we are after publishers traversal::
     >>> child_registry = getUtility(IRegistry)
     >>> child_registry
     <LocalRegistry at /plone/child/local_registry>
+
+Rename support
+--------------
+
+We should be able to rename our existing object and have the utility
+query still function without errors::
+
+    >>> from zope.component import queryUtility
+    >>> portal.manage_renameObject('child', 'renamed')
+    >>> child_registry = queryUtility(IRegistry)
+    >>> child_registry
+    <LocalRegistry at /plone/renamed/local_registry>
+
+Restore the original child name::
+
+    >>> portal.manage_renameObject('renamed', 'child')
+
     
 
 Check parent
